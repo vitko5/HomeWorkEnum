@@ -196,9 +196,7 @@ public class Main {
                     pause();
                 }
 
-                case 11 -> {
-                    System.out.println(ConsoleColors.YELLOW + "Good luck. Thanks for all." + ConsoleColors.RESET);
-                }
+                case 11 -> System.out.println(ConsoleColors.YELLOW + "Good luck. Thanks for all." + ConsoleColors.RESET);
                 default -> System.out.println(ConsoleColors.RED + "Error. Bad input." + ConsoleColors.RESET);
             }
         }
