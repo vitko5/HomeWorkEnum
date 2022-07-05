@@ -11,8 +11,8 @@ public enum Months {
     OCTOBER(31,Seasons.AUTUMN),
     NOVEMBER(30,Seasons.AUTUMN),
     DECEMBER(31,Seasons.WINTER);
-    final int days;
-    final Seasons season;
+    private final int days;
+    private final Seasons season;
 
     Months(int d, Seasons s) {
         this.days = d;
