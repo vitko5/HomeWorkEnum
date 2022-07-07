@@ -18,13 +18,8 @@ public enum Months {
 
     Months(int d, Seasons s) {
         LocalDate localDate = LocalDate.now();
-        if (this.name().equals("FEBRUARY")) {
-            if (localDate.isLeapYear()) {
-                this.days = 29;
-            }
-            else {
-                this.days = 28;
-            }
+        if (localDate.isLeapYear() && this.name().equals("FEBRUARY")) {
+            this.days = 29;
         }
         else {
             this.days = (byte) d;
