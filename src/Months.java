@@ -1,5 +1,7 @@
+import java.time.LocalDate;
+
 public enum Months {
-    JANUARY(31,Seasons.WINTER),
+    JANUARY(31, Seasons.WINTER),
     FEBRUARY(28,Seasons.WINTER),
     MARCH(31,Seasons.SPRING),
     APRIL(30,Seasons.SPRING),
@@ -11,15 +13,21 @@ public enum Months {
     OCTOBER(31,Seasons.AUTUMN),
     NOVEMBER(30,Seasons.AUTUMN),
     DECEMBER(31,Seasons.WINTER);
-    final int days;
-    final Seasons season;
+    private final byte days;
+    private final Seasons season;
 
     Months(int d, Seasons s) {
-        this.days = d;
+        LocalDate localDate = LocalDate.now();
+        if (localDate.isLeapYear() && this.name().equals("FEBRUARY")) {
+            this.days = 29;
+        }
+        else {
+            this.days = (byte) d;
+        }
         this.season = s;
     }
 
-    public int getDays() {
+    public byte getDays() {
         return days;
     }
 
